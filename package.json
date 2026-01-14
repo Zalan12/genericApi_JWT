@@ -1,0 +1,29 @@
+{
+  "name": "altalanosbackend_jwt",
+  "version": "1.0.0",
+  "description": "Általános NodeJS backend API via JWT",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "start": "node server"
+  },
+  "author": "FZ",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.0.2",
+    "mysql": "^2.18.1",
+    "nodemailer": "^7.0.10",
+    "path": "^0.12.7",
+    "winston": "^3.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

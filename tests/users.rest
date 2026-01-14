@@ -1,0 +1,87 @@
+
+@host = http://localhost
+@port=3000
+
+@url={{host}}:{{port}}
+### GET * FROM tables 
+
+GET {{url}}/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MzEsIm5hbWUiOiJGYXJrYXNvcyBjc2F2b2siLCJlbWFpbCI6ImFkbWluQHR1cnIuaHUiLCJwYXNzd29yZCI6IjA1MjJiMmNhNGI5Yzk3ZmZlOTJkZDAzZTFlOWExZDVjMDZiY2ZhOTEiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDI1LTEyLTAzVDIzOjAwOjAwLjAwMFoiLCJsYXRlc3RMb2dpbiI6IjIwMjUtMTItMjRUMjM6MDA6MDAuMDAwWiIsInN0YXR1cyI6MSwiYmFuTWVzc2FnZSI6IiJ9.G8w14eUDGEpTvyo1KXtTdjkXx0p5jbFYVI0heY1yv9k
+
+
+### GET one record from tables 
+
+GET {{url}}/termek/15
+Content-Type: application/json
+
+###POST DATA into table
+
+POST {{url}}/kategoria
+Content-Type: application/json
+
+ {
+    "id":3,
+    "kategoriaNev":"Teszt"
+ }
+
+
+###UPDATE record in table
+
+PATCH {{url}}/kategoria/3
+Content-Type: application/json
+
+ {
+    "kategoriaNev":"Valamicske"
+ }
+
+###Loginteszt
+POST {{url}}/users/login
+Content-Type: application/json
+
+{
+    "email":"admin@turr.hu",
+    "password":"Asdasd123"
+}
+
+
+###Regteszt
+
+POST {{url}}/users/registration
+Content-Type: application/json
+
+{
+    "name":"Bindo",
+    "email":"bindo@turr.hu",
+    "password":"Baboon123",
+    "confirm":"Baboon123"
+    
+}
+
+###
+
+GET {{url}}/users/role/eq/user
+Content-Type: application/json
+
+
+###
+
+GET {{url}}/orders/user/2
+Content-Type: application/json
+
+###SEND email
+
+POST {{url}}/sendemail
+Content-Type: application/json
+
+{
+    "template":"registration",
+    "to":"miwax25996@canvect.com",
+    "subject":"Halo",
+    "data":{
+        "username":"Sándor",
+        "email":"sanyisandor@gmail.com",
+        "password":"TitkosJelszo123",
+        "url":"http://localhost:4200"
+    }
+}
